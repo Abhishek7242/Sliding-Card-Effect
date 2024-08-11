@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(0, 255, 0);
+}
+
+.card {
+    cursor: pointer;
+    background-color: white;
+    position: relative;
+    width: 300px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 10px;
+    padding: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), inset 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.6s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), inset 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-container {
+    
+  
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    border-radius: 13px;
+
+}
+
+.card-image {
+      position: relative;
+    z-index: 1111;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+    border-radius: 13px;
+
+
+}
+
+.card-content {
+    z-index: 1;
+    position: absolute;
+    bottom: 50px; /* Adjusted from -52px for better alignment */
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    color: #000000;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.card-heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card-description {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.follow-button {
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #ff6b6b, #ff3b3b);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.6s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.follow-button:hover {
+    background: linear-gradient(135deg, #ff3b3b, #602424);
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+.card:hover .image-container .card-image {
+    transform: translateY(-200px);
+}
+
+.card:hover .card-content {
+    opacity: 1;
+}
